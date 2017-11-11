@@ -17,30 +17,41 @@ public class Inventory : MonoBehaviour {
 	//create a bool variable called (is_exist)
 	const int item_slots = 5;
 	int curr_items;
+	int curr_focus;
 	ItemBase[] current_inventory = new ItemBase[item_slots];
 
 	// Use this for initialization
 	void Start () {
 		//Inventory is empty
 		curr_items = 0;
+		curr_focus = 0;
+		add_to_inventory ("mushroom", "new_pic");
 	}
-
-	bool flag = true;
-	int count = 0;
+//
+//	bool flag = true;
+//	int count = 0;
 	// Update is called once per frame
 	void Update () {
 		//We really dont need to update the inventory by frame
-//		if (count !=2) {
-		if(flag ==true){
-			add_to_inventory ("mushroom", "new_pic");
-//			remove_from_inventory("mushroom");
-			rotate_focus();
-			count++;
-			flag = false;
+//		if (flag == true) {
+//			add_to_inventory ("mushroom", "new_pic");
+//			add_to_inventory ("mushroom", "new_pic");
+//			add_to_inventory ("mushroom", "new_pic");
+//			add_to_inventory ("mushroom", "new_pic");
+//			add_to_inventory ("mushroom", "new_pic");
+//
+//			flag = false;
+//		}
+//
+		if (Input.GetKeyUp ("e")) {
+			rotate_focus_right ();
+		}
+		if (Input.GetKeyUp ("q")) {
+			rotate_focus_left ();
 		}
 	}
 //
-	void add_to_inventory(string new_item_name, string new_item_filename){
+	public void add_to_inventory(string new_item_name, string new_item_filename){
 //		Check for full inventory, throw error if full
 		if (curr_items == item_slots) {
 //			player.printMessage("my inventory is full!");
@@ -60,22 +71,46 @@ public class Inventory : MonoBehaviour {
 
 	}
 
-	void rotate_focus(){
+	public void rotate_focus_right(){
 		GameObject focus_box = this.transform.Find("focus_box").gameObject;
 
-		if(curr_items != item_slots){
-			GameObject next_slot = this.transform.Find ("inventory").GetChild (curr_items).gameObject;
+		if (curr_focus != curr_items-1) {
+			GameObject next_slot = this.transform.Find ("inventory").GetChild (curr_focus+1).gameObject;
 			//We want the index+1, but since curr_item starts at 1, curr_item IS our index+1
-			GameObject current_slot = this.transform.Find ("inventory").GetChild (curr_items).gameObject;
 			Vector2 next_slot_pos = next_slot.GetComponent<RectTransform> ().anchoredPosition;
-//			Vector2 current_slot_pos = current_slot.GetComponent<RectTransform> ().anchoredPosition;
-//			Vector2 translation_amount = next_slot_pos - current_slot_pos;
 			focus_box.GetComponent<RectTransform> ().anchoredPosition = next_slot_pos;
+
+		} else {
+			GameObject first_slot = this.transform.Find ("inventory").GetChild (0).gameObject;
+			Vector2 first_slot_pos = first_slot.GetComponent<RectTransform> ().anchoredPosition;
+			focus_box.GetComponent<RectTransform> ().anchoredPosition = first_slot_pos;
 		}
+
+		curr_focus = (curr_focus + 1) % curr_items;
 	
 	}
 
-	void remove_from_inventory(string item_name){
+	public void rotate_focus_left(){
+		GameObject focus_box = this.transform.Find("focus_box").gameObject;
+
+		if (curr_focus != 0) {
+			GameObject next_slot = this.transform.Find ("inventory").GetChild (curr_focus-1).gameObject;
+			//We want the index+1, but since curr_item starts at 1, curr_item IS our index+1
+			Vector2 next_slot_pos = next_slot.GetComponent<RectTransform> ().anchoredPosition;
+			focus_box.GetComponent<RectTransform> ().anchoredPosition = next_slot_pos;
+
+		} else {
+			GameObject last_slot = this.transform.Find ("inventory").GetChild (curr_items-1).gameObject;
+			//curr_items starts at 1, so -1 to get index
+			Vector2 last_slot_pos = last_slot.GetComponent<RectTransform> ().anchoredPosition;
+			focus_box.GetComponent<RectTransform> ().anchoredPosition = last_slot_pos;
+		}
+
+		curr_focus = (curr_focus + curr_items -1) % curr_items;
+
+	}
+
+	public void remove_from_inventory(string item_name){
 		for (int i = 0; i < curr_items; i++) {
 			if (current_inventory [i].name == item_name) {
 				GameObject remove_target = this.transform.Find("inventory").GetChild (i).gameObject;
@@ -93,5 +128,13 @@ public class Inventory : MonoBehaviour {
 		//you didn't find the code.
 
 		print ("ERROR COULD NOT FIND ITEM");
+	}
+
+	public bool checkInteraction(string interaction_item){
+		if (current_inventory [curr_focus].name == interaction_item) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
