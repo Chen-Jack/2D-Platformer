@@ -53,7 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\script\Inventory.cs" />
      <Compile Include="Assets\script\movement.cs" />
-     <Compile Include="Assets\script\NewBehaviourScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

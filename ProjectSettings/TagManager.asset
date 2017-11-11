@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - item_in_inventory
+  - focus_box
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: focus_box
+    uniqueID: 2050566277
+    locked: 0
+  - name: item_in_inventory
+    uniqueID: 4068791945
     locked: 0

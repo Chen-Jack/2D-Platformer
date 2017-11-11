@@ -26,13 +26,16 @@ public class Inventory : MonoBehaviour {
 	}
 
 	bool flag = true;
+	int count = 0;
 	// Update is called once per frame
 	void Update () {
 		//We really dont need to update the inventory by frame
-		if (flag == true) {
-
+//		if (count !=2) {
+		if(flag ==true){
 			add_to_inventory ("mushroom", "new_pic");
-			remove_from_inventory("mushroom");
+//			remove_from_inventory("mushroom");
+			rotate_focus();
+			count++;
 			flag = false;
 		}
 	}
@@ -44,7 +47,7 @@ public class Inventory : MonoBehaviour {
 		} else {
 			//Updating the sprite image for inventory slot
 
-			GameObject new_item = this.transform.GetChild(0).GetChild (curr_items).gameObject;
+			GameObject new_item = this.transform.Find("inventory").GetChild(curr_items).gameObject;
 			Sprite new_sprite = Resources.Load<Sprite> (new_item_filename);
 			new_item.GetComponent<Image> ().sprite = new_sprite;
 
@@ -54,16 +57,28 @@ public class Inventory : MonoBehaviour {
 
 			print ("Added " + new_item_name);
 		}
+
 	}
 
-//	void rotate_focus(){
-//	
-//	}
+	void rotate_focus(){
+		GameObject focus_box = this.transform.Find("focus_box").gameObject;
+
+		if(curr_items != item_slots){
+			GameObject next_slot = this.transform.Find ("inventory").GetChild (curr_items).gameObject;
+			//We want the index+1, but since curr_item starts at 1, curr_item IS our index+1
+			GameObject current_slot = this.transform.Find ("inventory").GetChild (curr_items).gameObject;
+			Vector2 next_slot_pos = next_slot.GetComponent<RectTransform> ().anchoredPosition;
+//			Vector2 current_slot_pos = current_slot.GetComponent<RectTransform> ().anchoredPosition;
+//			Vector2 translation_amount = next_slot_pos - current_slot_pos;
+			focus_box.GetComponent<RectTransform> ().anchoredPosition = next_slot_pos;
+		}
+	
+	}
 
 	void remove_from_inventory(string item_name){
 		for (int i = 0; i < curr_items; i++) {
 			if (current_inventory [i].name == item_name) {
-				GameObject remove_target = this.transform.GetChild(0).GetChild (i).gameObject;
+				GameObject remove_target = this.transform.Find("inventory").GetChild (i).gameObject;
 				remove_target.GetComponent<Image> ().sprite = null;
 				current_inventory [i] = null;
 				curr_items--;
