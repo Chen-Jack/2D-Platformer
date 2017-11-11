@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - game_item
-  - new_pic
+  - item
+  - Ground
+  - obstacle
   layers:
   - Default
   - TransparentFX

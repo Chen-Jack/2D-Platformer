@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 730
-  m_MinSize: {x: 681, y: 342}
-  m_MaxSize: {x: 12006, y: 8042}
+  m_MinSize: {x: 681, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 6138
+  controlID: 3233
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -47,18 +47,18 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 305
-    y: 96
+    y: 94
     width: 716
     height: 420
   m_SceneLighting: 1
-  lastFramingTime: 35066.1196179986
+  lastFramingTime: 11345.16940498352
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -7, y: -76.98136, z: 0}
+    m_Target: {x: 1.3730217, y: -0.8833931, z: 12.279297}
     speed: 2
-    m_Value: {x: -7, y: -76.98136, z: 0}
+    m_Value: {x: 1.3730217, y: -0.8833931, z: 12.279297}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -85,9 +85,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1231.5251
+    m_Target: 15.779716
     speed: 2
-    m_Value: 1231.5251
+    m_Value: 15.779716
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 0
     width: 1023
     height: 730
-  m_MinSize: {x: 404, y: 342}
-  m_MaxSize: {x: 8004, y: 8042}
+  m_MinSize: {x: 404, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 6139
+  controlID: 3234
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 6140
+  controlID: 3235
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,33 +195,33 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 96
+    y: 94
     width: 301
     height: 420
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: eaa2f7ff
-    m_LastClickedID: -548118
-    m_ExpandedIDs: 88b9f3ff6eb0f5ffb0cff5ff6e1df6ff7e36f6ff8436f6ffec3af6fff23af6ff744ff6ff7a4ff6ffeaa2f7ff0efaffff00000000
+    m_SelectedIDs: e8a1f8ff
+    m_LastClickedID: -482840
+    m_ExpandedIDs: 3cbff8ff922af9ffdc31f9ff4a68f9ffb66df9ffb674f9ffdc75f9ff3088f9ff00ddf9ffe0ddf9ff7adef9ff5cebf9ffd6f7f9ff20faf9ffd409faffa4fbffffa6fbffff00000000a42700005e6000008a600000246d0000546d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Canvas
-      m_OriginalName: Canvas
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -548118
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
-  - 
+  - Level_1
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -251,7 +251,7 @@ MonoBehaviour:
   - {fileID: 8}
   - {fileID: 9}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 305
-    y: 96
+    y: 94
     width: 716
     height: 420
   m_MaximizeOnPlay: 0
@@ -372,14 +372,14 @@ MonoBehaviour:
     y: 441
     width: 1023
     height: 289
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 537
+    y: 535
     width: 1021
     height: 268
   m_SearchFilter:
@@ -418,19 +418,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources
+    - Assets/Prefab
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Prefab
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/jack/Documents/learning_unity
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7a390000
-    m_LastClickedID: 14714
-    m_ExpandedIDs: 2a280000ffffff7f
+    m_SelectedIDs: 74270000
+    m_LastClickedID: 10100
+    m_ExpandedIDs: 000000000a27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -446,7 +446,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -458,7 +458,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 2a280000ffffff7f
+    m_ExpandedIDs: 000000000a27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -483,10 +483,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b0cff5ff
-    m_LastClickedInstanceID: -667728
+    m_SelectedInstanceIDs: e8a1f8ff
+    m_LastClickedInstanceID: -482840
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000042260000b2280000
+    m_ExpandedInstanceIDs: c623000042260000b22800001227000006f0f9ff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,7 +502,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 537
+    y: 535
     width: 1021
     height: 268
 --- !u!114 &13
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1025
-    y: 96
+    y: 94
     width: 415
     height: 709
   m_ScrollPosition: {x: 0, y: 0}
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1025
-    y: 96
+    y: 94
     width: 415
     height: 709
   m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub

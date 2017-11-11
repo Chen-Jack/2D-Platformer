@@ -8,25 +8,34 @@ public class Inventory : MonoBehaviour {
 		public string name;
 		public string file_name;
 
-		public ItemBase(string name ,string file_name){
+		public ItemBase(string name /*string file_name*/){
 			this.name = name;
-			this.file_name = file_name;
+//			this.file_name = file_name;
 		}
 	}
 
+
+
 	//create a bool variable called (is_exist)
-	const int item_slots = 5;
+	const int item_slots = 6;
 	int curr_items;
 	int curr_focus;
 	ItemBase[] current_inventory = new ItemBase[item_slots];
+//	public string focusItem;
+
 
 	// Use this for initialization
 	void Start () {
+//		focusItem = current_inventory [curr_focus].name;
 		//Inventory is empty
 		curr_items = 0;
 		curr_focus = 0;
-		add_to_inventory ("mushroom", "new_pic");
+//		add_to_inventory ("mushroom", "new_pic");
 	}
+
+
+
+
 //
 //	bool flag = true;
 //	int count = 0;
@@ -51,7 +60,7 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 //
-	public void add_to_inventory(string new_item_name, string new_item_filename){
+	public void add_to_inventory(string new_item_name, Sprite new_sprite /*string new_item_filename*/){
 //		Check for full inventory, throw error if full
 		if (curr_items == item_slots) {
 //			player.printMessage("my inventory is full!");
@@ -59,11 +68,11 @@ public class Inventory : MonoBehaviour {
 			//Updating the sprite image for inventory slot
 
 			GameObject new_item = this.transform.Find("inventory").GetChild(curr_items).gameObject;
-			Sprite new_sprite = Resources.Load<Sprite> (new_item_filename);
+//			Sprite new_sprite = Resources.Load<Sprite> (new_item_filename);
 			new_item.GetComponent<Image> ().sprite = new_sprite;
 
 
-			current_inventory [curr_items] = new ItemBase(new_item_name, new_item_filename);
+			current_inventory [curr_items] = new ItemBase(new_item_name);
 			curr_items++;
 
 			print ("Added " + new_item_name);
@@ -74,7 +83,10 @@ public class Inventory : MonoBehaviour {
 	public void rotate_focus_right(){
 		GameObject focus_box = this.transform.Find("focus_box").gameObject;
 
-		if (curr_focus != curr_items-1) {
+		if (curr_items == 0) {
+			return;
+		}
+		else if (curr_focus != curr_items-1) {
 			GameObject next_slot = this.transform.Find ("inventory").GetChild (curr_focus+1).gameObject;
 			//We want the index+1, but since curr_item starts at 1, curr_item IS our index+1
 			Vector2 next_slot_pos = next_slot.GetComponent<RectTransform> ().anchoredPosition;
@@ -93,6 +105,9 @@ public class Inventory : MonoBehaviour {
 	public void rotate_focus_left(){
 		GameObject focus_box = this.transform.Find("focus_box").gameObject;
 
+		if (curr_items == 0) {
+			return;
+		}
 		if (curr_focus != 0) {
 			GameObject next_slot = this.transform.Find ("inventory").GetChild (curr_focus-1).gameObject;
 			//We want the index+1, but since curr_item starts at 1, curr_item IS our index+1
@@ -137,4 +152,6 @@ public class Inventory : MonoBehaviour {
 			return false;
 		}
 	}
+
+
 }
