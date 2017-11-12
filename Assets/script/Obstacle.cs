@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 	public string required_item;
-	// Use this for initialization
-	void Start () {
-		
+
+	void OnCollisionStay2D(Collision2D col){
+		if (GetComponent<Inventory> ().currItem == required_item) {
+			Destroy(transform.GetChild (0));
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

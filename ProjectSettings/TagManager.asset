@@ -7,6 +7,8 @@ TagManager:
   - item
   - Ground
   - obstacle
+  - interaction
+  - start
   layers:
   - Default
   - TransparentFX

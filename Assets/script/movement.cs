@@ -15,7 +15,6 @@ public class movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 		isGrounded = true;
 
 	}
@@ -29,9 +28,9 @@ public class movement : MonoBehaviour {
 		borderPatrol ();
 		DontDestroyOnLoad (gameObject);
 
-		if (FindObjectsOfType (GetType ()).Length > 1) {
-			Destroy (gameObject);
-		}
+//		if (FindObjectsOfType (GetType ()).Length > 1) {
+//			Destroy (gameObject);	
+//		}
 	}
 
 	void FlipPlayer(){
@@ -81,22 +80,25 @@ public class movement : MonoBehaviour {
 			Sprite inventory_image = col.gameObject.GetComponent<SpriteRenderer> ().sprite;
 			GameObject.Find ("InventoryWindow").GetComponent<Inventory> ().add_to_inventory (col.gameObject.name, inventory_image);
 			Destroy (col.gameObject);
-		} 
-		else if (object_tag == "obstacle") {
+		} else if (object_tag == "obstacle") {
 			string required_item = col.gameObject.GetComponent<Obstacle> ().required_item;
-			if (GameObject.Find ("InventoryWindow").GetComponent<Inventory> ().checkInteraction(required_item)) {
+			if (GameObject.Find ("InventoryWindow").GetComponent<Inventory> ().checkInteraction (required_item)) {
 				Destroy (col.gameObject);
 			}
-		} 
+		} else if (object_tag == "interaction") {
+			string required_item = col.gameObject.GetComponent<Obstacle> ().required_item;
+			if (GameObject.Find ("InventoryWindow").GetComponent<Inventory> ().checkInteraction (required_item)) {
+				col.gameObject.GetComponent<PlatformActivator> ().activatePlatform ();
+			}
+		}
 		else {
 			print ("Error with interacting?");
 		}
 
-
 	}
 
 	void borderPatrol(){
-		if (GetComponent<Rigidbody2D> ().position.y <= -6) {
+		if (GetComponent<Rigidbody2D> ().position.y <= -30) {
 			Destroy (gameObject);
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 		}

@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour {
 	int curr_focus;
 	ItemBase[] current_inventory = new ItemBase[item_slots];
 //	public string focusItem;
-
+	public string currItem;
 
 	// Use this for initialization
 	void Start () {
@@ -58,6 +58,11 @@ public class Inventory : MonoBehaviour {
 		if (Input.GetKeyUp ("q")) {
 			rotate_focus_left ();
 		}
+
+		if (current_inventory [curr_focus] != null) {
+			currItem = current_inventory[curr_focus].name;
+		}
+
 	}
 //
 	public void add_to_inventory(string new_item_name, Sprite new_sprite /*string new_item_filename*/){

@@ -51,12 +51,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\parallax.cs" />
+     <Compile Include="Assets\PlatformActivator.cs" />
+     <Compile Include="Assets\Portal_Functionality.cs" />
+     <Compile Include="Assets\PrintPrompt.cs" />
      <Compile Include="Assets\script\Boss.cs" />
      <Compile Include="Assets\script\Follow_Player.cs" />
      <Compile Include="Assets\script\Inventory.cs" />
      <Compile Include="Assets\script\movement.cs" />
      <Compile Include="Assets\script\Obstacle.cs" />
-     <Compile Include="Assets\script\Portal_Functionality.cs" />
+     <Compile Include="Assets\Scripts\_Area_2.cs" />
+     <Compile Include="Assets\Scripts\Camera.cs" />
+     <Compile Include="Assets\Scripts\Enemy_Health.cs" />
+     <Compile Include="Assets\Scripts\Enemy_Projectile.cs" />
+     <Compile Include="Assets\Scripts\Enemy_Shoot.cs" />
+     <Compile Include="Assets\Scripts\Enemy_Spawn.cs" />
+     <Compile Include="Assets\Scripts\EnemyAI.cs" />
+     <Compile Include="Assets\Scripts\Enter_Area.cs" />
+     <Compile Include="Assets\Scripts\Get_Coin.cs" />
+     <Compile Include="Assets\Scripts\jumpPower_Coin.cs" />
+     <Compile Include="Assets\Scripts\Player_Action.cs" />
+     <Compile Include="Assets\Scripts\Player_Health.cs" />
+     <Compile Include="Assets\Scripts\Player_Movement.cs" />
+     <Compile Include="Assets\Scripts\Player_Projectile.cs" />
+     <Compile Include="Assets\Scripts\Player_Score.cs" />
+     <Compile Include="Assets\Scripts\Start_Shooting.cs" />
+     <Compile Include="Assets\Set_Position.cs" />
+     <Compile Include="Assets\test_movement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
