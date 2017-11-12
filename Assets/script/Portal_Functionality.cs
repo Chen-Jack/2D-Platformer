@@ -19,7 +19,7 @@ public class Portal_Functionality : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D col){
 		if (col.gameObject.tag == "Player") {
-			if (Input.GetKeyUp ("up")) {
+			if (Input.GetKeyUp ("x")) {
 				SceneManager.LoadScene (sceneIndex);
 			}
 		}

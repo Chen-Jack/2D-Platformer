@@ -16,7 +16,6 @@ public class movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		gameObject.transform.position = new Vector2 (0, 3);
 		isGrounded = true;
 
 	}

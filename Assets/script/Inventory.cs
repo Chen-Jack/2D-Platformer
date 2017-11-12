@@ -146,8 +146,12 @@ public class Inventory : MonoBehaviour {
 	}
 
 	public bool checkInteraction(string interaction_item){
-		if (current_inventory [curr_focus].name == interaction_item) {
-			return true;
+		if (curr_items != 0) {
+			if (current_inventory [curr_focus].name == interaction_item) {
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			return false;
 		}
