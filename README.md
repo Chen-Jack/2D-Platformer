@@ -1,10 +1,10 @@
-A 2D Platformer created on the Unity engine. 
-This was created in during the CUNY Hackathon for Fall 2017.
+A 2D Platformer created on the Unity engine. __
+This was created in during the CUNY Hackathon for Fall 2017. __
 
 Team:
-Jack C.
-Shelly H.
-Naseeb G.
+Jack C.__
+Shelly H.__
+Naseeb G.__
 
 The game implements basic 2D movement, as well as a simple UI inventory system, and 
 the ability to interact with the environment using the items in the inventory.
