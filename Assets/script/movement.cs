@@ -48,7 +48,7 @@ public class movement : MonoBehaviour {
 	//GetComponent<Hit>().b
 	void move(){
 		
-		GetComponent<Rigidbody2D> ().velocity = new Vector2 (x * playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		GetComponent<Rigidbody2D> ().velocity = new Vector2 (x *  playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
 
 	}
