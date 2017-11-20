@@ -2,7 +2,7 @@ A 2D Platformer created on the Unity engine. __
 This was created in during the CUNY Hackathon for Fall 2017. __
 
 Team:
-Jack C.__
+Jack C._
 Shelly H.__
 Naseeb G.__
 
